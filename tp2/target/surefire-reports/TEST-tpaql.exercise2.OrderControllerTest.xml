@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="tpaql.exercise1.UserServiceTest" time="0.652" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="tpaql.exercise2.OrderControllerTest" time="0.064" tests="1" errors="1" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -59,5 +59,41 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="shouldReturnUserWhenIdExists" classname="tpaql.exercise1.UserServiceTest" time="0.634"/>
+  <testcase name="shouldCallOrderServiceWhenControllerCreatesOrder" classname="tpaql.exercise2.OrderControllerTest" time="0.063">
+    <error message="&#10;Mockito cannot mock this class: class tpaql.exercise2.OrderService.&#10;&#10;If you&apos;re not sure why you&apos;re getting this error, please open an issue on GitHub.&#10;&#10;&#10;Java               : 25&#10;JVM vendor name    : Oracle Corporation&#10;JVM vendor version : 25.0.1+8-LTS-27&#10;JVM name           : Java HotSpot(TM) 64-Bit Server VM&#10;JVM version        : 25.0.1+8-LTS-27&#10;JVM info           : mixed mode, sharing&#10;OS name            : Windows 10&#10;OS version         : 10.0&#10;&#10;&#10;You are seeing this disclaimer because Mockito is configured to create inlined mocks.&#10;You can learn about inline mocks and their limitations under item #39 of the Mockito class javadoc.&#10;&#10;Underlying exception : org.mockito.exceptions.base.MockitoException: Could not modify all classes [class tpaql.exercise2.OrderService, class java.lang.Object]" type="org.mockito.exceptions.base.MockitoException">org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: class tpaql.exercise2.OrderService.
+
+If you're not sure why you're getting this error, please open an issue on GitHub.
+
+
+Java               : 25
+JVM vendor name    : Oracle Corporation
+JVM vendor version : 25.0.1+8-LTS-27
+JVM name           : Java HotSpot(TM) 64-Bit Server VM
+JVM version        : 25.0.1+8-LTS-27
+JVM info           : mixed mode, sharing
+OS name            : Windows 10
+OS version         : 10.0
+
+
+You are seeing this disclaimer because Mockito is configured to create inlined mocks.
+You can learn about inline mocks and their limitations under item #39 of the Mockito class javadoc.
+
+Underlying exception : org.mockito.exceptions.base.MockitoException: Could not modify all classes [class tpaql.exercise2.OrderService, class java.lang.Object]
+	at tpaql.exercise2.OrderControllerTest.setUp(OrderControllerTest.java:15)
+Caused by: org.mockito.exceptions.base.MockitoException: Could not modify all classes [class tpaql.exercise2.OrderService, class java.lang.Object]
+	at tpaql.exercise2.OrderControllerTest.setUp(OrderControllerTest.java:15)
+Caused by: java.lang.IllegalStateException: 
+
+Byte Buddy could not instrument all classes within the mock's type hierarchy
+
+This problem should never occur for javac-compiled classes. This problem has been observed for classes that are:
+ - Compiled by older versions of scalac
+ - Classes that are part of the Android distribution
+	at tpaql.exercise2.OrderControllerTest.setUp(OrderControllerTest.java:15)
+Caused by: java.lang.IllegalArgumentException: Java 25 (69) is not supported by the current version of Byte Buddy which officially supports Java 22 (66) - update Byte Buddy or set net.bytebuddy.experimental as a VM property
+	at tpaql.exercise2.OrderControllerTest.setUp(OrderControllerTest.java:15)
+</error>
+  </testcase>
 </testsuite>
